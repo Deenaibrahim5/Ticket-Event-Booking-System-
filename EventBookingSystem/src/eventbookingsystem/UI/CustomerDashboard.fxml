@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane style="-fx-background-color: linear-gradient(to bottom, #E3F2FD, #FFFFFF);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="eventbookingsystem.controller.CustomerDashboardController">
+   <top>
+      <VBox spacing="10.0" style="-fx-background-color: #BBDEFB; -fx-padding: 15;">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <Label text="Customer Dashboard" textFill="#1A237E" style="-fx-font-weight: bold;">
+            <font>
+               <Font size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="welcomeLabel" text="Welcome!" textFill="#263238" />
+      </VBox>
+   </top>
+
+   <center>
+      <VBox spacing="10.0">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <Label text="Available Events:" textFill="#263238" style="-fx-font-weight: bold; -fx-font-size: 14px;" />
+         <TableView fx:id="eventsTable" prefHeight="300.0" style="-fx-background-color: white; -fx-border-color: #BBDEFB; -fx-border-radius: 5;">
+            <columns>
+               <TableColumn fx:id="eventIdColumn" text="ID" prefWidth="50.0" />
+               <TableColumn fx:id="eventNameColumn" text="Event Name" prefWidth="180.0" />
+               <TableColumn fx:id="eventDateColumn" text="Date" prefWidth="100.0" />
+               <TableColumn fx:id="locationColumn" text="Location" prefWidth="150.0" />
+               <TableColumn fx:id="seatsColumn" text="Seats Left" prefWidth="80.0" />
+               <TableColumn fx:id="priceColumn" text="Price" prefWidth="80.0" />
+            </columns>
+         </TableView>
+      </VBox>
+   </center>
+
+   <bottom>
+      <HBox alignment="CENTER" spacing="10.0" style="-fx-background-color: #F5F5F5; -fx-padding: 10;">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <Button fx:id="bookTicketButton" mnemonicParsing="false" onAction="#handleBookTicket" text="Book Ticket" style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" />
+         <Button fx:id="myBookingsButton" mnemonicParsing="false" onAction="#handleMyBookings" text="My Bookings" style="-fx-background-color: #64B5F6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" />
+         <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" text="Logout" style="-fx-background-color: #90CAF9; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand;" />
+      </HBox>
+   </bottom>
+</BorderPane>
